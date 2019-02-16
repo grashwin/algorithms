@@ -24,7 +24,6 @@ public class MyDataStructure {
         }
     }
 
-
     public static class MaxNode {
         public int val;
         public int max;
@@ -62,6 +61,33 @@ public class MyDataStructure {
 
             return top.max;
         }
+    }
+
+    //TODO: Finish off the stack problem
+    public static class Stacks {
+        int[] tops;
+        int[] stackData;
+        int[] nextIndex;
+        int nextAvailable;
+
+        public Stacks(int stackNum, int capacity) {
+            tops = new int[stackNum];
+            stackData = new int[capacity];
+            nextIndex = new int[stackNum];
+
+            for(int i = 0; i < nextIndex.length; i++) {
+                nextIndex[i] = i + 1;
+            }
+
+            nextIndex[capacity - 1] = -1;
+            nextAvailable = -1;
+        }
+
+        public void push(int stackNum, int value) {
+            stackData[nextAvailable] = value;
+            nextAvailable = nextIndex[nextAvailable];
+        }
+
     }
 
 }
