@@ -1,5 +1,7 @@
 package com.alg.practice;
 
+import java.util.List;
+
 public class MyDataStructure {
 
     public static class Node {
@@ -21,6 +23,17 @@ public class MyDataStructure {
             this.val = val;
             this.left = left;
             this.right = right;
+        }
+    }
+
+    public static class FBTreeNode {
+        public int id;
+        public String name;
+        public List<FBTreeNode> children;
+
+        public FBTreeNode(String name, List<FBTreeNode> children) {
+            this.name = name;
+            this.children = children;
         }
     }
 
@@ -88,6 +101,26 @@ public class MyDataStructure {
             nextAvailable = nextIndex[nextAvailable];
         }
 
+    }
+
+    public static class Schedule {
+        public Double start;
+        public Double end;
+
+        public Schedule(Double start, Double end) {
+            this.start = start;
+            this.end = end;
+        }
+    }
+
+    public static class Person {
+        public String firstName;
+        public String lastName;
+
+        public Person(String fName, String lName) {
+            this.firstName = fName;
+            this.lastName = lName;
+        }
     }
 
 }
